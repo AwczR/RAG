@@ -1,0 +1,33 @@
+# config.yaml
+
+# API配置
+api:
+  base_url: "https://api.siliconflow.cn/v1"
+  api_key: "sk-xxxxxxxxxxxxxxxxxxxx"   # 替换成你自己的API key
+
+# Embedding 模型
+embedding:
+  model: "BAAI/bge-large-zh-v1.5"
+  chunk_size: 400          # 每个文档分块的最大字符数
+  chunk_overlap: 50        # 分块之间的重叠字符数
+
+# LLM 模型
+llm:
+  model: "Qwen/Qwen2-7B-Instruct"      # 示例，可换成你在 SiliconFlow 上可用的模型
+  temperature: 0.7
+  max_tokens: 1024
+
+# Rerank 模型
+rerank:
+  model: "BAAI/bge-reranker-base"
+
+# 存储配置
+vector_store:
+  provider: "chroma"                  # 默认使用 chroma
+  persist_dir: "./storage"
+  collection_name: "rag_base"
+
+# 运行参数
+runtime:
+  timeout_sec: 30
+  show_context: true                  # true 表示 query 时打印完整上下文
