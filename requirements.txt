@@ -1,0 +1,27 @@
+# ---- Core ----
+llama-index==0.13.2
+
+# ---- Readers / loaders（含PDF可选依赖）----
+llama-index-readers-file[pymupdf]==0.5.2
+
+# ---- LLM & Embeddings（OpenAI 路线，简单稳定）----
+openai==1.100.1
+llama-index-llms-openai==0.5.4
+llama-index-embeddings-openai==0.5.0
+tiktoken>=0.7.0
+
+# ---- Embeddings（本地路线，可选；若只用 OpenAI 可删除以下两行）----
+# 说明：使用 HF 本地嵌入将自动拉取 transformers/torch 等依赖（由其子依赖处理）
+#llama-index-embeddings-huggingface==0.6.0
+#sentence-transformers>=3.0.0
+
+# ---- 向量库 1：Faiss（速度快，纯本地）----
+faiss-cpu==1.12.0
+llama-index-vector-stores-faiss==0.5.0
+
+# ---- 向量库 2：Chroma（本地或客户端/服务端均可，用其一即可）----
+chromadb==1.0.16
+llama-index-vector-stores-chroma==0.5.0
+
+# ---- 工具（可选）----
+python-dotenv>=1.0.1
